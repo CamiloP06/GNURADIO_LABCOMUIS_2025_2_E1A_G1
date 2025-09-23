@@ -1,28 +1,16 @@
 # Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
-
-Utilice esta [plantilla](#integrantes) para presentar sus informes de laboratorio. 
-
-Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#ejemplos-usando-markdown)
-
-### Importante
-
-- En caso de utilizar herramientas de Inteligencia Artificial para asistencia en la redacción, análisis o cualquier otra tarea, de debe especificar en la sección de **Declaración de Originalidad y Responsabilidad** aclarando el alcance y propósito de su uso.
-- Cualquier omisión en la declaración del uso de IA o la presentación de contenido plagiado será penalizado con nota de 0.0 y reporte a la coordinación del programa.
-- Si emplea referencias disponibles en línea, agregue los hipervínculos respectivos.  
-
 ---
-# Práctica 1: TÍTULO PRÁCTICA
-
+# Práctica 4: Vigilancia del Espectro Legal
 ### Integrantes
-- **PRIMER INTEGRANTE** - Código
+- **Juan Sebastian Mendoza Garcia** - 2221663
 - **SEGUNDO INTEGRANTE** - Código
 
 Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones  
 Universidad Industrial de Santander
 
 ### Fecha
-31 de diciembre de 2030
+23 de Septiembre de 2025
 
 ---
 
