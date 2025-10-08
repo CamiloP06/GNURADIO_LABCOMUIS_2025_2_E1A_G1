@@ -4,8 +4,8 @@
 # Práctica 5: Creando nuestra propia antena
 
 ### Integrantes
-- **PRIMER INTEGRANTE** - Código
-- **SEGUNDO INTEGRANTE** - Código
+- **Juan Sebastián Mendoza García** - 2221663
+- **Juan Camilo Pabon Silva** - Código
 
 Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones  
 Universidad Industrial de Santander
