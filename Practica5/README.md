@@ -26,7 +26,7 @@ Uso de IA: [Indicar si se usó IA y para qué aspectos específicos, por ejemplo
 ## Contenido
 
 ### Resumen
-Se diseñó, simuló, construyó y validó una antena Biquad direccional. Inicialmente, se calcularon sus dimensiones teóricas para una frecuencia objetivo y se optimizaron mediante simulaciones en MATLAB, ajustando la longitud de los brazos y la distancia al reflector para centrar la resonancia (S11). El prototipo construido se midió con un Analizador de Redes Vectorial (VNA) y un Analizador de Espectro. Los resultados mostraron una buena concordancia entre la simulación y la medición, confirmando la frecuencia de resonancia esperada. La validación funcional demostró el comportamiento direccional del diseño, ya que la señal recibida se maximizaba al apuntar la antena hacia la fuente, validando el patrón de radiación simulado.
+Se diseñó, simuló, construyó y validó una antena Biquad direccional. Inicialmente, se calcularon sus dimensiones teóricas para una frecuencia objetivo, por debajo de un 1 GHz, y se optimizaron mediante simulaciones en MATLAB, ajustando la longitud de los brazos y la distancia al reflector para centrar la resonancia (S11). El prototipo construido se midió con un Analizador de Redes Vectorial (VNA) y un Analizador de Espectro. Los resultados mostraron una buena concordancia entre la simulación y la medición, confirmando la frecuencia de resonancia esperada. La validación funcional demostró el comportamiento direccional del diseño, ya que la señal recibida se maximizaba al apuntar la antena hacia la fuente, validando el patrón de radiación simulado.
 
 **Palabras clave:** Antena Biquad, Simulación 11, Directividad.
 
