@@ -1,18 +1,7 @@
 # Laboratorio de Comunicaciones
 ## Universidad Industrial de Santander
-
-Utilice esta [plantilla](#integrantes) para presentar sus informes de laboratorio. 
-
-Al final de la plantilla encontrará algunos ejemplos para enriquecer su informe, incluyendo cómo insertar imágenes, tablas y ecuaciones, así como generar hipervínculos a su repositorio o al propio informe. Ir a [ejemplos en Markdown](#ejemplos-usando-markdown)
-
-### Importante
-
-- En caso de utilizar herramientas de Inteligencia Artificial para asistencia en la redacción, análisis o cualquier otra tarea, de debe especificar en la sección de **Declaración de Originalidad y Responsabilidad** aclarando el alcance y propósito de su uso.
-- Cualquier omisión en la declaración del uso de IA o la presentación de contenido plagiado será penalizado con nota de 0.0 y reporte a la coordinación del programa.
-- Si emplea referencias disponibles en línea, agregue los hipervínculos respectivos.  
-
 ---
-# Práctica 1: TÍTULO PRÁCTICA
+# Práctica 5: Creando nuestra propia antena
 
 ### Integrantes
 - **PRIMER INTEGRANTE** - Código
@@ -22,7 +11,7 @@ Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones
 Universidad Industrial de Santander
 
 ### Fecha
-31 de diciembre de 2030
+7 de Octubre de 2025
 
 ---
 
@@ -37,9 +26,9 @@ Uso de IA: [Indicar si se usó IA y para qué aspectos específicos, por ejemplo
 ## Contenido
 
 ### Resumen
-Descripción en no más de 150 palabras del contenido de la práctica. Debe ser conciso y brindar una idea clara sobre el trabajo realizado y sus conclusiones.
+Se diseñó, simuló, construyó y validó una antena Biquad direccional. Inicialmente, se calcularon sus dimensiones teóricas para una frecuencia objetivo y se optimizaron mediante simulaciones en MATLAB, ajustando la longitud de los brazos y la distancia al reflector para centrar la resonancia (S11). El prototipo construido se midió con un Analizador de Redes Vectorial (VNA) y un Analizador de Espectro. Los resultados mostraron una buena concordancia entre la simulación y la medición, confirmando la frecuencia de resonancia esperada. La validación funcional demostró el comportamiento direccional del diseño, ya que la señal recibida se maximizaba al apuntar la antena hacia la fuente, validando el patrón de radiación simulado.
 
-**Palabras clave:** de 2 a 5 palabras clave. 
+**Palabras clave:** Antena Biquad, Simulación 11, Directividad.
 
 ### Introducción
 Cada práctica contará con preguntas orientadoras para la elaboración de la introducción. Por ejemplo: 
