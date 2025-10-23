@@ -1,0 +1,531 @@
+options:
+  parameters:
+    author: ''
+    catch_exceptions: 'True'
+    category: '[GRC Hier Blocks]'
+    cmake_opt: ''
+    comment: ''
+    copyright: ''
+    description: ''
+    gen_cmake: 'On'
+    gen_linking: dynamic
+    generate_options: qt_gui
+    hier_block_src_path: '.:'
+    id: Mision7_JuanSMendoza_JuanPabon
+    max_nouts: '0'
+    output_language: python
+    placement: (0,0)
+    qt_qss_theme: ''
+    realtime_scheduling: ''
+    run: 'True'
+    run_command: '{python} -u {filename}'
+    run_options: prompt
+    sizing_mode: fixed
+    thread_safe_setters: ''
+    title: Not titled yet
+    window_size: (1000,1000)
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 8]
+    rotation: 0
+    state: enabled
+
+blocks:
+- name: N_0
+  id: variable_qtgui_range
+  parameters:
+    comment: ''
+    gui_hint: ''
+    label: ''
+    min_len: '200'
+    orient: QtCore.Qt.Horizontal
+    rangeType: float
+    start: '0'
+    step: '0.01'
+    stop: '1'
+    value: '0.1'
+    widget: counter_slider
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [328, 16.0]
+    rotation: 0
+    state: enabled
+- name: samp_rate
+  id: variable
+  parameters:
+    comment: ''
+    value: '500000'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [200, 12]
+    rotation: 0
+    state: enabled
+- name: analog_noise_source_x_0
+  id: analog_noise_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: N_0
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    noise_type: analog.GR_GAUSSIAN
+    seed: '0'
+    type: complex
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [8, 184.0]
+    rotation: 0
+    state: disabled
+- name: analog_sig_source_x_0
+  id: analog_sig_source_x
+  parameters:
+    affinity: ''
+    alias: ''
+    amp: '1'
+    comment: ''
+    freq: '1000'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    offset: '0'
+    phase: '0'
+    samp_rate: samp_rate
+    showports: 'False'
+    type: complex
+    waveform: analog.GR_COS_WAVE
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [24, 288.0]
+    rotation: 0
+    state: enabled
+- name: blocks_complex_to_float_1
+  id: blocks_complex_to_float
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [624, 216.0]
+    rotation: 0
+    state: enabled
+- name: blocks_stream_to_vector_decimator_0
+  id: blocks_stream_to_vector_decimator
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    sample_rate: samp_rate
+    type: complex
+    vec_rate: '30'
+    vlen: '1024'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [624, 424.0]
+    rotation: 0
+    state: enabled
+- name: blocks_throttle2_0
+  id: blocks_throttle2
+  parameters:
+    affinity: ''
+    alias: ''
+    comment: ''
+    ignoretag: 'True'
+    limit: auto
+    maximum: '1024'
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    samples_per_second: samp_rate
+    type: complex
+    vlen: '1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [328, 320.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_0
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\n# Aseg\xFArate de que el nombre de la clase sea 'blk'\n\
+      # GRC busca este nombre por defecto.\nclass blk(gr.sync_block):\n    \"\"\"\n\
+      \    Calcula la potencia promedio de un vector de entrada.\n    \n    Entrada\
+      \ (in[0]): Vector de N items (complex)\n    Salida (out[0]): 1 item (float)\n\
+      \    \"\"\"\n\n    def __init__(self, vector_size=1024):  # Par\xE1metro para\
+      \ el tama\xF1o del vector\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Estimador de Potencia',\n            in_sig=[(np.complex64,\
+      \ vector_size)],  # Entrada: Vector de complex64\n            out_sig=[np.float32]\
+      \                  # Salida: Item de float32\n        )\n        # (Opcional)\
+      \ Guardar el tama\xF1o si se necesita en work()\n        self.vector_size =\
+      \ vector_size \n\n    def work(self, input_items, output_items):\n        \"\
+      \"\"\n        input_items[0]: (NumPy array) 2D, forma (num_vectores_recibidos,\
+      \ vector_size)\n        output_items[0]: (NumPy array) 1D, forma (num_vectores_recibidos,)\n\
+      \        \"\"\"\n        \n        # Acceder a los buffers\n        in_vectors\
+      \ = input_items[0]\n        out_power = output_items[0]\n\n        # 1. Calcular\
+      \ el cuadrado de la magnitud (|x|^2) para todos los vectores\n        # La forma\
+      \ resultante es (num_vectores_recibidos, vector_size)\n        mag_sq = np.abs(in_vectors)**2\n\
+      \n        # 2. Calcular la media (promedio) a lo largo del eje del vector (axis=1)\n\
+      \        # Esto calcula el promedio para *cada* vector de entrada\n        #\
+      \ La forma resultante es (num_vectores_recibidos,)\n        avg_pwr = np.mean(mag_sq,\
+      \ axis=1) \n\n        # 3. Asignar los resultados al buffer de salida\n    \
+      \    out_power[:] = avg_pwr\n\n        # 4. Retornar el n\xFAmero de items de\
+      \ *salida* producidos\n        # (Es igual al n\xFAmero de vectores de *entrada*\
+      \ consumidos)\n        return len(out_power)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vector_size: '1024'
+  states:
+    _io_cache: '(''Estimador de Potencia'', ''blk'', [(''vector_size'', ''1024'')],
+      [(''0'', ''complex'', 1024)], [(''0'', ''float'', 1)], ''\n    Calcula la potencia
+      promedio de un vector de entrada.\n    \n    Entrada (in[0]): Vector de N items
+      (complex)\n    Salida (out[0]): 1 item (float)\n    '', [''vector_size''])'
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [872, 376.0]
+    rotation: 0
+    state: enabled
+- name: epy_block_1
+  id: epy_block
+  parameters:
+    _source_code: "\"\"\"\nEmbedded Python Blocks:\n\nEach time this file is saved,\
+      \ GRC will instantiate the first class it finds\nto get ports and parameters\
+      \ of your block. The arguments to __init__  will\nbe the parameters. All of\
+      \ them are required to have default values!\n\"\"\"\n\nimport numpy as np\n\
+      from gnuradio import gr\n\n# Aseg\xFArate de que el nombre de la clase sea 'blk'\n\
+      class blk(gr.sync_block):\n    \"\"\"\n    Calcula la media y la desviaci\xF3\
+      n est\xE1ndar de la magnitud de un vector de entrada.\n    \n    Entrada (in[0]):\
+      \ Vector de N items (complex)\n    Salida (out[0]): Media de la magnitud (float)\n\
+      \    Salida (out[1]): Desviaci\xF3n est\xE1ndar de la magnitud (float)\n   \
+      \ \"\"\"\n\n    def __init__(self, vector_size=1024):  # Par\xE1metro para el\
+      \ tama\xF1o del vector\n        gr.sync_block.__init__(\n            self,\n\
+      \            name='Estad\xEDsticas de Amplitud',\n            in_sig=[(np.complex64,\
+      \ vector_size)],  # Entrada: Vector de complex64\n            out_sig=[np.float32,\
+      \ np.float32]     # Salida 0: float, Salida 1: float\n        )\n        # (Opcional)\
+      \ Guardar el tama\xF1o si se necesita en work()\n        self.vector_size =\
+      \ vector_size \n\n    def work(self, input_items, output_items):\n        \"\
+      \"\"\n        input_items[0]: (NumPy array) 2D, forma (num_vectores, vector_size)\n\
+      \        output_items[0]: (NumPy array) 1D, forma (num_vectores,)\n        output_items[1]:\
+      \ (NumPy array) 1D, forma (num_vectores,)\n        \"\"\"\n        \n      \
+      \  # Acceder a los buffers\n        in_vectors = input_items[0]\n        out_mean\
+      \ = output_items[0]\n        out_std = output_items[1]\n\n        # 1. Calcular\
+      \ la magnitud de todas las muestras\n        # La forma de 'magnitudes' es (num_vectores,\
+      \ vector_size)\n        magnitudes = np.abs(in_vectors)\n\n        # 2. Calcular\
+      \ la media (promedio) a lo largo del eje del vector (axis=1)\n        # y asignarla\
+      \ a la primera salida (out[0]).\n        # El resultado tiene forma (num_vectores,)\n\
+      \        out_mean[:] = np.mean(magnitudes, axis=1)\n\n        # 3. Calcular\
+      \ la desviaci\xF3n est\xE1ndar a lo largo del eje del vector (axis=1)\n    \
+      \    # y asignarla a la segunda salida (out[1]).\n        # El resultado tiene\
+      \ forma (num_vectores,)\n        out_std[:] = np.std(magnitudes, axis=1)\n\n\
+      \        # 4. Retornar el n\xFAmero de items de *salida* producidos\n      \
+      \  # (Es igual al n\xFAmero de vectores de *entrada* consumidos)\n        return\
+      \ len(out_mean)\n"
+    affinity: ''
+    alias: ''
+    comment: ''
+    maxoutbuf: '0'
+    minoutbuf: '0'
+    vector_size: '1024'
+  states:
+    _io_cache: "('Estad\xEDsticas de Amplitud', 'blk', [('vector_size', '1024')],\
+      \ [('0', 'complex', 1024)], [('0', 'float', 1), ('1', 'float', 1)], '\\n   \
+      \ Calcula la media y la desviaci\xF3n est\xE1ndar de la magnitud de un vector\
+      \ de entrada.\\n    \\n    Entrada (in[0]): Vector de N items (complex)\\n \
+      \   Salida (out[0]): Media de la magnitud (float)\\n    Salida (out[1]): Desviaci\xF3\
+      n est\xE1ndar de la magnitud (float)\\n    ', ['vector_size'])"
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [872, 496.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_histogram_sink_x_1
+  id: qtgui_histogram_sink_x
+  parameters:
+    accum: 'True'
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'True'
+    axislabels: 'True'
+    bins: '100'
+    color1: '"blue"'
+    color10: '"dark blue"'
+    color2: '"red"'
+    color3: '"green"'
+    color4: '"black"'
+    color5: '"cyan"'
+    color6: '"magenta"'
+    color7: '"yellow"'
+    color8: '"dark red"'
+    color9: '"dark green"'
+    comment: ''
+    grid: 'False'
+    gui_hint: ''
+    label1: ''
+    label10: ''
+    label2: ''
+    label3: ''
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    type: float
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    xmax: '1'
+    xmin: '-1'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [856, 168.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_number_sink_0
+  id: qtgui_number_sink
+  parameters:
+    affinity: ''
+    alias: ''
+    autoscale: 'False'
+    avg: '0'
+    color1: ("black", "black")
+    color10: ("black", "black")
+    color2: ("black", "black")
+    color3: ("black", "black")
+    color4: ("black", "black")
+    color5: ("black", "black")
+    color6: ("black", "black")
+    color7: ("black", "black")
+    color8: ("black", "black")
+    color9: ("black", "black")
+    comment: ''
+    factor1: '1'
+    factor10: '1'
+    factor2: '1'
+    factor3: '1'
+    factor4: '1'
+    factor5: '1'
+    factor6: '1'
+    factor7: '1'
+    factor8: '1'
+    factor9: '1'
+    graph_type: qtgui.NUM_GRAPH_HORIZ
+    gui_hint: ''
+    label1: Potencia
+    label10: ''
+    label2: Media
+    label3: "Desviaci\xF3n Estandar"
+    label4: ''
+    label5: ''
+    label6: ''
+    label7: ''
+    label8: ''
+    label9: ''
+    max: '1'
+    min: '-1'
+    name: '""'
+    nconnections: '3'
+    type: float
+    unit1: ''
+    unit10: ''
+    unit2: ''
+    unit3: ''
+    unit4: ''
+    unit5: ''
+    unit6: ''
+    unit7: ''
+    unit8: ''
+    unit9: ''
+    update_time: '0.10'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [1176, 408.0]
+    rotation: 0
+    state: enabled
+- name: qtgui_time_sink_x_0
+  id: qtgui_time_sink_x
+  parameters:
+    affinity: ''
+    alias: ''
+    alpha1: '1.0'
+    alpha10: '1.0'
+    alpha2: '1.0'
+    alpha3: '1.0'
+    alpha4: '1.0'
+    alpha5: '1.0'
+    alpha6: '1.0'
+    alpha7: '1.0'
+    alpha8: '1.0'
+    alpha9: '1.0'
+    autoscale: 'False'
+    axislabels: 'True'
+    color1: blue
+    color10: dark blue
+    color2: red
+    color3: green
+    color4: black
+    color5: cyan
+    color6: magenta
+    color7: yellow
+    color8: dark red
+    color9: dark green
+    comment: ''
+    ctrlpanel: 'False'
+    entags: 'True'
+    grid: 'False'
+    gui_hint: ''
+    label1: Signal 1
+    label10: Signal 10
+    label2: Signal 2
+    label3: Signal 3
+    label4: Signal 4
+    label5: Signal 5
+    label6: Signal 6
+    label7: Signal 7
+    label8: Signal 8
+    label9: Signal 9
+    legend: 'True'
+    marker1: '-1'
+    marker10: '-1'
+    marker2: '-1'
+    marker3: '-1'
+    marker4: '-1'
+    marker5: '-1'
+    marker6: '-1'
+    marker7: '-1'
+    marker8: '-1'
+    marker9: '-1'
+    name: '""'
+    nconnections: '1'
+    size: '1024'
+    srate: samp_rate
+    stemplot: 'False'
+    style1: '1'
+    style10: '1'
+    style2: '1'
+    style3: '1'
+    style4: '1'
+    style5: '1'
+    style6: '1'
+    style7: '1'
+    style8: '1'
+    style9: '1'
+    tr_chan: '0'
+    tr_delay: '0'
+    tr_level: '0.0'
+    tr_mode: qtgui.TRIG_MODE_FREE
+    tr_slope: qtgui.TRIG_SLOPE_POS
+    tr_tag: '""'
+    type: complex
+    update_time: '0.10'
+    width1: '1'
+    width10: '1'
+    width2: '1'
+    width3: '1'
+    width4: '1'
+    width5: '1'
+    width6: '1'
+    width7: '1'
+    width8: '1'
+    width9: '1'
+    ylabel: Amplitude
+    ymax: '1'
+    ymin: '-1'
+    yunit: '""'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [624, 312.0]
+    rotation: 0
+    state: enabled
+
+connections:
+- [analog_sig_source_x_0, '0', blocks_throttle2_0, '0']
+- [blocks_complex_to_float_1, '0', qtgui_histogram_sink_x_1, '0']
+- [blocks_stream_to_vector_decimator_0, '0', epy_block_0, '0']
+- [blocks_stream_to_vector_decimator_0, '0', epy_block_1, '0']
+- [blocks_throttle2_0, '0', blocks_complex_to_float_1, '0']
+- [blocks_throttle2_0, '0', blocks_stream_to_vector_decimator_0, '0']
+- [blocks_throttle2_0, '0', qtgui_time_sink_x_0, '0']
+- [epy_block_0, '0', qtgui_number_sink_0, '0']
+- [epy_block_1, '0', qtgui_number_sink_0, '1']
+- [epy_block_1, '1', qtgui_number_sink_0, '2']
+
+metadata:
+  file_format: 1
+  grc_version: v3.10.11.0-89-ga17f69e7
