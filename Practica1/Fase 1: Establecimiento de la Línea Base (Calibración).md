@@ -1,7 +1,7 @@
 ##  Fase 1: Exploración y Descubrimiento (El Ojo Panorámico del SDR)
-## Mapeo del Terreno:
+### Mapeo del Terreno:
 Conecta la antena al SDR. Utiliza el software para realizar un barrido amplio del espectro. (50 a 2200 MHz)
-## Identificación de Objetivos: 
+### Identificación de Objetivos: 
 Observa la visualización en cascada (waterfall) e identifica al menos tres señales comerciales potentes. El SDR es tu herramienta de "visión amplia" para encontrar rápidamente puntos de interés.
-## Selección de un Objetivo: 
+### Selección de un Objetivo: 
 Elige una de esas señales (la más clara y estable) para un análisis más profundo. Anota su frecuencia central aproximada.
