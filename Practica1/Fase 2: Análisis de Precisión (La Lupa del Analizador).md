@@ -7,3 +7,5 @@
 - **Ancho de Banda:** 4.64 MHz. Con la ayuda de 2 Marcadores se midio el delta, desde donde empezaba el canal, que en este caso es 469.879 MHz hasta cuando se presentaba una caida notable en la frecuencia 473.512 MHz.
 - **Resolución de ancho de banda (RBW):** 300 kHz. Se modifico la resolución de bando de ancha para evitar la saturación.
 - **SPAN:** 8 MHz. Se acomodo hasta que fuera visible el inicio y fin del rango de frecuencia de un canal de televisión.
+
+<img width="1280" height="841" alt="imagen" src="https://github.com/user-attachments/assets/ab7823ee-067d-45c6-aaa3-b1a0fd46cc4e" />
