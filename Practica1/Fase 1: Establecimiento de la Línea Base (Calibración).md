@@ -7,6 +7,7 @@ Observa la visualización en cascada (waterfall) e identifica al menos tres señ
 Elige una de esas señales (la más clara y estable) para un análisis más profundo. Anota su frecuencia central aproximada.
 
 - **Frecuencia 1920 MHz:** Telefonía móvil movistar.
+
 <img width="1004" height="544" alt="imagen" src="https://github.com/user-attachments/assets/c14110ac-b0ab-4a95-be78-2c9eff62f1c4" />
 - **Frecuencia 886 MHz:** Telefonía movil claro.
 <img width="1004" height="545" alt="imagen" src="https://github.com/user-attachments/assets/93e355d0-7ad0-43e5-abbc-af1d29b3d36f" />
