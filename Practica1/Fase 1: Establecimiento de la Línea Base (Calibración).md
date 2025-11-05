@@ -7,5 +7,10 @@ Observa la visualización en cascada (waterfall) e identifica al menos tres señ
 Elige una de esas señales (la más clara y estable) para un análisis más profundo. Anota su frecuencia central aproximada.
 
 - **Frecuencia 1920 MHz:** Telefonía móvil movistar.
+
 - **Frecuencia 886 MHz:** Telefonía movil claro.
-- **Frecuencia 886 MHz:** Canales nacionales TDT.
+
+- **Frecuencia 488 MHz:** Canales nacionales TDT.
+
+
+Se escogio la señal de 488 MHz para canales nacionales TDT.
