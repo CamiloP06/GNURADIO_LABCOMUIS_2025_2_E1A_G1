@@ -18,3 +18,4 @@ Esta es la fase crítica del procesamiento de la señal, donde se construye la e
 
 <img width="1732" height="339" alt="Fase2_Objetivo Especifico 2 4" src="https://github.com/user-attachments/assets/3641d6eb-8f79-4afb-98ef-11530dfc4d05" />
 
+Adicionalmente dentro de esta carpeta se encuentran los archivos utilizados en gnu para cumplir los objetivos.
