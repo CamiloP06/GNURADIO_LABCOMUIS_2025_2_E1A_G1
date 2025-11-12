@@ -1,1 +1,7 @@
+Usted es un ingeniero de I+D (Investigación y Desarrollo) en una firma de telecomunicaciones de vanguardia. Se le ha asignado la tarea de desarrollar un prototipo de receptor cognitivo, un sistema capaz de analizar las características de una señal en tiempo real para adaptarse a las condiciones del canal.
 
+Su primera tarea es desarrollar los "sentidos" de este receptor: bloques de procesamiento personalizados que puedan medir las estadísticas vitales de una señal. Para acelerar el desarrollo, usted no escribirá estos bloques desde cero; en su lugar, utilizará herramientas de IA generativa para crear el código Python necesario y luego lo integrará y validará en el entorno de GNU Radio.
+
+Objetivo General:
+
+Implementar y validar bloques de procesamiento de señales personalizados en GNU Radio, utilizando IA generativa (como Gemini, ChatGPT, etc.) para escribir el código Python subyacente. Los bloques deberán estimar en tiempo real la potencia de la señal, la media y la desviación estándar de una señal de entrada.
