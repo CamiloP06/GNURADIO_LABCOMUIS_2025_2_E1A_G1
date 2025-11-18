@@ -5,7 +5,7 @@
 
 ### Integrantes
 - **Juan Sebastián Mendoza García** - 2221663
-- **Juan Camilo Pabon Silva** - Código
+- **Juan Camilo Pabon Silva** - 2201525
 
 Escuela de Ingenierías Eléctrica, Electrónica y de Telecomunicaciones  
 Universidad Industrial de Santander
