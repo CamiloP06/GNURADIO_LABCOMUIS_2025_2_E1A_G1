@@ -4,6 +4,17 @@
 - **Calcule la Longitud de Onda (λ):** Use la fórmula λ=c/f, donde c es la velocidad de la luz (~3×10^8 m/s).
 - **Calcule la Longitud del Lado (L):** La primera aproximación para cada lado de los cuadrados es L=λ/4.
 
+f = 915 MHz
+
+λ = 0.32786
+
+L = 0.081967
+
+reflector = 0.040983
+
+<img width="1387" height="762" alt="fase1_diseño" src="https://github.com/user-attachments/assets/5a25314e-c8be-4a11-84df-06356455e127" />
+
+
 **Creación y Simulación en MATLAB:**
 - Abra la aplicación Antenna Designer en MATLAB y busque o cree un objeto biquad o quad. Si no existe de forma nativa, se puede modelar con segmentos de alambre (wire objects).
 - Use sus dimensiones calculadas como parámetros iniciales.
@@ -20,10 +31,3 @@ Las herramientas de ajuste son:
 
 Guarde los resultados: Anote las dimensiones finales optimizadas y guarde las capturas del gráfico S11 y del patrón de radiación, que debe ser claramente direccional (un lóbulo principal hacia adelante).
 
-f = 915 MHz
-
-λ = 0.32786
-
-L = 0.081967
-
-reflector = 0.040983
