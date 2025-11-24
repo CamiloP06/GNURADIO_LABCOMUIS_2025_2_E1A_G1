@@ -4,3 +4,4 @@ En esta fase final, la señal procesada se lleva al dominio de radiofrecuencia p
 - **Objetivo Específico 3.3:** Iniciar la transmisión y utilizar un receptor de radio FM comercial para sintonizar la señal.
 - **Objetivo Específico 3.4:** Validar cualitativamente la calidad del audio recibido y confirmar que el indicador "Stereo" del receptor se activa, lo que prueba la correcta generación y detección del piloto de 19 kHz.
 
+Dentro de esta carpeta se encuentra tanto el video de nuestra emisora en función como Objetivo Especifico_3.4.mp4. como el archivo grc
