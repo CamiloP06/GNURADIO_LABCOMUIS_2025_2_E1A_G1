@@ -21,6 +21,9 @@ Las herramientas de ajuste son:
 Guarde los resultados: Anote las dimensiones finales optimizadas y guarde las capturas del gráfico S11 y del patrón de radiación, que debe ser claramente direccional (un lóbulo principal hacia adelante).
 
 f = 915 MHz
+
 λ = 0.32786
+
 L = 0.081967
+
 reflector = 0.040983
