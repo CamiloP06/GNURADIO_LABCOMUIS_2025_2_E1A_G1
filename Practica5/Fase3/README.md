@@ -16,3 +16,5 @@
 - Apunte la antena en diferentes direcciones. Observe la amplitud de la señal recibida en la pantalla.
 
 ![fase3_validacionfuncionalideal](https://github.com/user-attachments/assets/3822e458-0629-4cf1-9dcc-2a64615601fe)
+
+![fase3_validacionfuncionalnosotros](https://github.com/user-attachments/assets/2da85ae9-f6cc-4552-9bdf-ab85c8e4e5dd)
