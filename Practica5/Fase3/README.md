@@ -4,6 +4,7 @@
 - Conecte la antena Biquad construida.
 - Mida el parámetro S11 en el mismo rango de frecuencia que se simuló.
 - Guarde una fotografía de la pantalla del VNA que muestre la curva de S11. Compare la frecuencia de resonancia medida con la simulada.
+![fase3_vadacionimpedancia2](https://github.com/user-attachments/assets/30677b87-2adc-4e7f-98cb-7d7fd0834913)
 
 ![fase3_validacionimpedancia1](https://github.com/user-attachments/assets/16f870ad-1810-46f7-92e0-0a065c33e0ba)
 
