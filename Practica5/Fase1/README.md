@@ -10,6 +10,7 @@
 - Añada un reflector (reflector) detrás del elemento principal a una distancia inicial (ej. λ/8).
 - Defina el rango de simulación centrado en la frecuencia de interés (ej. para 915 MHz, simule de 800 MHz a 1100 MHz).
 - Ejecute la simulación y analice el gráfico S11 (Coeficiente de Reflexión).
+
 **Proceso de Ajuste Fino:**
 - **Observación:** Es probable que la resonancia no esté exactamente en la frecuencia objetivo debido a los efectos del grosor del alambre y la cercanía del reflector.
 Las herramientas de ajuste son:
