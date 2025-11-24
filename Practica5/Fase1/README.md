@@ -3,6 +3,7 @@
 - **Seleccione la Frecuencia (f):** Elija una frecuencia de interés por debajo de 1 GHz. Puede ser la banda ISM de 915 MHz, una frecuencia de TV Digital (ej. 550 MHz) o una frecuencia de radio FM (ej. 100 MHz).
 - **Calcule la Longitud de Onda (λ):** Use la fórmula λ=c/f, donde c es la velocidad de la luz (~3×10^8 m/s).
 - **Calcule la Longitud del Lado (L):** La primera aproximación para cada lado de los cuadrados es L=λ/4.
+
 **Creación y Simulación en MATLAB:**
 - Abra la aplicación Antenna Designer en MATLAB y busque o cree un objeto biquad o quad. Si no existe de forma nativa, se puede modelar con segmentos de alambre (wire objects).
 - Use sus dimensiones calculadas como parámetros iniciales.
