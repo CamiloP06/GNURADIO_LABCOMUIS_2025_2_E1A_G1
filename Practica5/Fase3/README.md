@@ -14,3 +14,5 @@
 - Busque una señal conocida en el ambiente (ej. una estación de TV, una radio FM, o una señal de un generador si se dispone de uno).
 - Conecte la antena al analizador.
 - Apunte la antena en diferentes direcciones. Observe la amplitud de la señal recibida en la pantalla.
+
+![fase3_validacionfuncionalideal](https://github.com/user-attachments/assets/3822e458-0629-4cf1-9dcc-2a64615601fe)
