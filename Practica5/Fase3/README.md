@@ -5,6 +5,9 @@
 - Mida el parámetro S11 en el mismo rango de frecuencia que se simuló.
 - Guarde una fotografía de la pantalla del VNA que muestre la curva de S11. Compare la frecuencia de resonancia medida con la simulada.
 
+![fase3_validacionimpedancia1](https://github.com/user-attachments/assets/16f870ad-1810-46f7-92e0-0a065c33e0ba)
+
+
 **2. Validación Funcional (con el Analizador de Espectro):**
 - Configure el analizador de espectro FPC1000 en el rango de frecuencia de la antena.
 - Busque una señal conocida en el ambiente (ej. una estación de TV, una radio FM, o una señal de un generador si se dispone de uno).
