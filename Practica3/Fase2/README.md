@@ -1,4 +1,4 @@
-![Fase2_Cuadrada](https://github.com/user-attachments/assets/1aa769a1-1d50-41a3-a75d-18487627a6e5)## Fase 2: Generación y Medición (Ejecución en Laboratorio)
+## Fase 2: Generación y Medición (Ejecución en Laboratorio)
 
 1.  **Conexión Segura:** Conecte la salida de transmisión (TX1 / RX1) de su SDR al atenuador, y la salida del atenuador a la entrada del canal 1 del osciloscopio. Nota: recuerde que la amplitud maxima de la envolvente compleja debe ser menor a 0.5
 2. **Modulación con Señales Periódicas:** 
